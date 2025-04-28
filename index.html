@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <nav class="nav">
+                    <div class="brand-social">
+                        <a href="#" class="brand-social__logo"></a>
+                        <div class="header__social">
+                            <a href="#" class="header__social__link">
+                                <svg width="15" height="9" viewBox="0 0 15 9" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.8379 0.621094C13.6348 1.48438 11.8066 4.07422 11.8066 4.07422C11.6543 4.32812 11.5781 4.45508 11.8066 4.73438C11.9082 4.86133 13.8125 6.68945 14.0918 7.55273C14.2188 7.98438 14.0156 8.1875 13.584 8.1875H12.0859C11.5273 8.1875 11.3496 7.75586 10.334 6.74023C9.44531 5.87695 9.06445 5.75 8.83594 5.75C8.37891 5.75 8.45508 5.92773 8.45508 7.62891C8.45508 7.98438 8.32812 8.1875 7.38867 8.1875C5.81445 8.1875 4.0625 7.24805 2.81836 5.4707C0.964844 2.85547 0.457031 0.900391 0.457031 0.494141C0.457031 0.265625 0.558594 0.0625 0.964844 0.0625H2.46289C2.84375 0.0625 2.99609 0.240234 3.14844 0.646484C3.88477 2.7793 5.10352 4.6582 5.61133 4.6582C5.81445 4.6582 5.89062 4.55664 5.89062 4.07422V1.86523C5.83984 0.849609 5.30664 0.773438 5.30664 0.417969C5.30664 0.240234 5.43359 0.0625 5.6875 0.0625H8.02344C8.35352 0.0625 8.45508 0.240234 8.45508 0.621094V3.5918C8.45508 3.89648 8.60742 4.02344 8.68359 4.02344C8.88672 4.02344 9.03906 3.89648 9.39453 3.56641C10.4609 2.34766 11.2227 0.494141 11.2227 0.494141C11.3242 0.265625 11.502 0.0625 11.8828 0.0625H13.3809C13.8379 0.0625 13.9141 0.316406 13.8379 0.621094Z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="header__social__link">
+                                <svg width="13" height="12" viewBox="0 0 13 12" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6.6875 3.20508C8.28711 3.20508 9.60742 4.52539 9.60742 6.125C9.60742 7.75 8.28711 9.04492 6.6875 9.04492C5.0625 9.04492 3.76758 7.75 3.76758 6.125C3.76758 4.52539 5.0625 3.20508 6.6875 3.20508ZM6.6875 8.0293C7.72852 8.0293 8.56641 7.19141 8.56641 6.125C8.56641 5.08398 7.72852 4.24609 6.6875 4.24609C5.62109 4.24609 4.7832 5.08398 4.7832 6.125C4.7832 7.19141 5.64648 8.0293 6.6875 8.0293ZM10.3945 3.10352C10.3945 3.48438 10.0898 3.78906 9.70898 3.78906C9.32812 3.78906 9.02344 3.48438 9.02344 3.10352C9.02344 2.72266 9.32812 2.41797 9.70898 2.41797C10.0898 2.41797 10.3945 2.72266 10.3945 3.10352ZM12.3242 3.78906C12.375 4.72852 12.375 7.54688 12.3242 8.48633C12.2734 9.40039 12.0703 10.1875 11.4102 10.873C10.75 11.5332 9.9375 11.7363 9.02344 11.7871C8.08398 11.8379 5.26562 11.8379 4.32617 11.7871C3.41211 11.7363 2.625 11.5332 1.93945 10.873C1.2793 10.1875 1.07617 9.40039 1.02539 8.48633C0.974609 7.54688 0.974609 4.72852 1.02539 3.78906C1.07617 2.875 1.2793 2.0625 1.93945 1.40234C2.625 0.742188 3.41211 0.539062 4.32617 0.488281C5.26562 0.4375 8.08398 0.4375 9.02344 0.488281C9.9375 0.539062 10.75 0.742188 11.4102 1.40234C12.0703 2.0625 12.2734 2.875 12.3242 3.78906ZM11.1055 9.47656C11.4102 8.74023 11.334 6.96289 11.334 6.125C11.334 5.3125 11.4102 3.53516 11.1055 2.77344C10.9023 2.29102 10.5215 1.88477 10.0391 1.70703C9.27734 1.40234 7.5 1.47852 6.6875 1.47852C5.84961 1.47852 4.07227 1.40234 3.33594 1.70703C2.82812 1.91016 2.44727 2.29102 2.24414 2.77344C1.93945 3.53516 2.01562 5.3125 2.01562 6.125C2.01562 6.96289 1.93945 8.74023 2.24414 9.47656C2.44727 9.98438 2.82812 10.3652 3.33594 10.5684C4.07227 10.873 5.84961 10.7969 6.6875 10.7969C7.5 10.7969 9.27734 10.873 10.0391 10.5684C10.5215 10.3652 10.9277 9.98438 11.1055 9.47656Z" />
+                                </svg>
+
+                            </a>
+                            <a href="#" class="header__social__link">
+                                <svg width="8" height="14" viewBox="0 0 8 14" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7.08398 7.9375H5.17969V13.625H2.64062V7.9375H0.558594V5.60156H2.64062V3.79883C2.64062 1.76758 3.85938 0.625 5.71289 0.625C6.60156 0.625 7.54102 0.802734 7.54102 0.802734V2.80859H6.5C5.48438 2.80859 5.17969 3.41797 5.17969 4.07812V5.60156H7.43945L7.08398 7.9375Z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="header__social__link">
+                                <svg width="13" height="12" viewBox="0 0 13 12" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M11.6543 3.48438C11.6543 3.61133 11.6543 3.71289 11.6543 3.83984C11.6543 7.36914 8.98828 11.4062 4.08789 11.4062C2.56445 11.4062 1.16797 10.9746 0 10.2129C0.203125 10.2383 0.40625 10.2637 0.634766 10.2637C1.87891 10.2637 3.02148 9.83203 3.93555 9.12109C2.76758 9.0957 1.77734 8.33398 1.44727 7.26758C1.625 7.29297 1.77734 7.31836 1.95508 7.31836C2.18359 7.31836 2.4375 7.26758 2.64062 7.2168C1.42188 6.96289 0.507812 5.89648 0.507812 4.60156V4.57617C0.863281 4.7793 1.29492 4.88086 1.72656 4.90625C0.990234 4.42383 0.533203 3.61133 0.533203 2.69727C0.533203 2.18945 0.660156 1.73242 0.888672 1.35156C2.20898 2.95117 4.18945 4.01758 6.39844 4.14453C6.34766 3.94141 6.32227 3.73828 6.32227 3.53516C6.32227 2.0625 7.51562 0.869141 8.98828 0.869141C9.75 0.869141 10.4355 1.17383 10.9434 1.70703C11.5273 1.58008 12.1113 1.35156 12.6191 1.04688C12.416 1.68164 12.0098 2.18945 11.4512 2.51953C11.9844 2.46875 12.5176 2.31641 12.9746 2.11328C12.6191 2.64648 12.1621 3.10352 11.6543 3.48438Z" />
+                                </svg>
+
+                            </a>
+                        </div>
+                    </div>
+
+                    <ul class="menu">
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Афиша</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Медиа</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Фильмы</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Актёры</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Новости</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Подборки</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Категории</a>
+                        </li>
+                    </ul>
+
+                    <div class="header__search">
+                        <button class="search__btn"></button>
+                    </div>
+
+                    <button class="login">Войти</button>
+                </nav>
+            </div>
+
+        </header>
+
+        <main class="main">
+            <section class="nowCinema">
+                <div class="container">
+                    <div class="nowCinema__wrapper">
+                        <div class="nowCinema__head">
+                            <h2 class="nowCinema__title">Сейчас в кино</h2>
+                            <div class="nowCinema__line"></div>
+                            <div class="nowCinema__tabs__buttons">
+                                <button class="nowCinema__tab-btn tab-btn__active"
+                                    onclick="openMovie(event,'All-Movie')">Все</button>
+                                <button class="nowCinema__tab-btn" onclick="openMovie(event,'Action')">Боевики</button>
+                                <button class="nowCinema__tab-btn"
+                                    onclick="openMovie(event,'Adventure')">Приключения</button>
+                                <button class="nowCinema__tab-btn" onclick="openMovie(event,'Comedy')">Комедии</button>
+                                <button class="nowCinema__tab-btn"
+                                    onclick="openMovie(event,'Sci-fi')">Фантастика</button>
+                                <button class="nowCinema__tab-btn"
+                                    onclick="openMovie(event,'Thriller')">Триллеры</button>
+                                <button class="nowCinema__tab-btn" onclick="openMovie(event,'Drama')">Драма</button>
+                            </div>
+                        </div>
+                        <div class="nowCinema__body">
+                            <div id="All-Movie" class="nowCinema__tabs__item">
+                                <div class="nowCinema__box">
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-1.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__normally">6.70</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Побег из Претории</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">фантастика</span>,
+                                            <span class="nowCinema__item__genre">фэнтези</span>,
+                                            <span class="nowCinema__item__genre">боевик</span>,
+                                            <span class="nowCinema__item__genre">приключения</span>
+                                        </div>
+                                    </div>
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-2.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__fine">8.50</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Джокер</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">Триллер</span>,
+                                            <span class="nowCinema__item__genre">драма</span>,
+                                            <span class="nowCinema__item__genre">криминал</span>
+                                        </div>
+                                    </div>
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-3.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__normally">6.70</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Звёздные войны: Скайуокер. Восход</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">фантастика</span>,
+                                            <span class="nowCinema__item__genre">фэнтези</span>,
+                                            <span class="nowCinema__item__genre">боевик</span>,
+                                            <span class="nowCinema__item__genre">приключения</span>
+                                        </div>
+                                    </div>
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-4.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__fine">8.00</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Джентльмены</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">Боевик</span>,
+                                            <span class="nowCinema__item__genre">комедия</span>,
+                                            <span class="nowCinema__item__genre">криминал</span>
+                                        </div>
+                                    </div>
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-5.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__fine">8.10</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Ford против Ferrari</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">Биография</span>,
+                                            <span class="nowCinema__item__genre">спорт</span>,
+                                            <span class="nowCinema__item__genre">драма</span>,
+                                            <span class="nowCinema__item__genre">боевик</span>
+
+                                        </div>
+                                    </div>
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-6.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__bad">4.90</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">3022</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">фантастика</span>,
+                                            <span class="nowCinema__item__genre">триллер</span>
+                                        </div>
+                                    </div>
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-7.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__normally">6.20</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Хищные птицы: Потрясающая история Харли Квинн
+                                        </p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">Боевик</span>,
+                                            <span class="nowCinema__item__genre">криминал</span>,
+                                            <span class="nowCinema__item__genre">комедия</span>
+                                        </div>
+                                    </div>
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-8.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__normally">6.70</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Плохие парни навсегда</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">боевик</span>,
+                                            <span class="nowCinema__item__genre">комедия</span>,
+                                            <span class="nowCinema__item__genre">криминал</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="nowCinema__allMovie__btn all-btn">Все новинки</button>
+                            </div>
+                            <div id="Action" class="nowCinema__tabs__item">
+                                <div class="nowCinema__box">
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-1.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__normally">6.70</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Побег из Претории</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">фантастика</span>,
+                                            <span class="nowCinema__item__genre">фэнтези</span>,
+                                            <span class="nowCinema__item__genre">боевик</span>,
+                                            <span class="nowCinema__item__genre">приключения</span>
+                                        </div>
+                                    </div>
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-3.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__normally">6.70</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Звёздные войны: Скайуокер. Восход</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">фантастика</span>,
+                                            <span class="nowCinema__item__genre">фэнтези</span>,
+                                            <span class="nowCinema__item__genre">боевик</span>,
+                                            <span class="nowCinema__item__genre">приключения</span>
+                                        </div>
+                                    </div>
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-4.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__fine">8.00</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Джентльмены</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">Боевик</span>,
+                                            <span class="nowCinema__item__genre">комедия</span>,
+                                            <span class="nowCinema__item__genre">криминал</span>
+                                        </div>
+                                    </div>
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-5.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__fine">8.10</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Ford против Ferrari</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">Биография</span>,
+                                            <span class="nowCinema__item__genre">спорт</span>,
+                                            <span class="nowCinema__item__genre">драма</span>,
+                                            <span class="nowCinema__item__genre">боевик</span>
+
+                                        </div>
+                                    </div>
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-7.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__normally">6.20</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Хищные птицы: Потрясающая история Харли Квинн
+                                        </p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">Боевик</span>,
+                                            <span class="nowCinema__item__genre">криминал</span>,
+                                            <span class="nowCinema__item__genre">комедия</span>
+                                        </div>
+                                    </div>
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-8.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__normally">6.70</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Плохие парни навсегда</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">боевик</span>,
+                                            <span class="nowCinema__item__genre">комедия</span>,
+                                            <span class="nowCinema__item__genre">криминал</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="nowCinema__allMovie__btn all-btn">Все боевики</button>
+                            </div>
+                            <div id="Adventure" class="nowCinema__tabs__item">
+                                <div class="nowCinema__box">
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-1.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__normally">6.70</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Побег из Претории</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">фантастика</span>,
+                                            <span class="nowCinema__item__genre">фэнтези</span>,
+                                            <span class="nowCinema__item__genre">боевик</span>,
+                                            <span class="nowCinema__item__genre">приключения</span>
+                                        </div>
+                                    </div>
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-3.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__normally">6.70</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Звёздные войны: Скайуокер. Восход</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">фантастика</span>,
+                                            <span class="nowCinema__item__genre">фэнтези</span>,
+                                            <span class="nowCinema__item__genre">боевик</span>,
+                                            <span class="nowCinema__item__genre">приключения</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="nowCinema__allMovie__btn all-btn">Все приключения</button>
+                            </div>
+                            <div id="Comedy" class="nowCinema__tabs__item">
+                                <div class="nowCinema__box">
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-4.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__fine">8.00</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Джентльмены</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">Боевик</span>,
+                                            <span class="nowCinema__item__genre">комедия</span>,
+                                            <span class="nowCinema__item__genre">криминал</span>
+                                        </div>
+                                    </div>
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-7.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__normally">6.20</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Хищные птицы: Потрясающая история Харли Квинн
+                                        </p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">Боевик</span>,
+                                            <span class="nowCinema__item__genre">криминал</span>,
+                                            <span class="nowCinema__item__genre">комедия</span>
+                                        </div>
+                                    </div>
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-8.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__normally">6.70</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Плохие парни навсегда</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">боевик</span>,
+                                            <span class="nowCinema__item__genre">комедия</span>,
+                                            <span class="nowCinema__item__genre">криминал</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="nowCinema__allMovie__btn all-btn">Все комедии</button>
+                            </div>
+                            <div id="Sci-fi" class="nowCinema__tabs__item">
+                                <div class="nowCinema__box">
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-1.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__normally">6.70</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Побег из Претории</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">фантастика</span>,
+                                            <span class="nowCinema__item__genre">фэнтези</span>,
+                                            <span class="nowCinema__item__genre">боевик</span>,
+                                            <span class="nowCinema__item__genre">приключения</span>
+                                        </div>
+                                    </div>
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-3.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__normally">6.70</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Звёздные войны: Скайуокер. Восход</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">фантастика</span>,
+                                            <span class="nowCinema__item__genre">фэнтези</span>,
+                                            <span class="nowCinema__item__genre">боевик</span>,
+                                            <span class="nowCinema__item__genre">приключения</span>
+                                        </div>
+                                    </div>
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-6.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__bad">4.90</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">3022</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">фантастика</span>,
+                                            <span class="nowCinema__item__genre">триллер</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <button class="nowCinema__allMovie__btn all-btn">Вся фантастика</button>
+                            </div>
+                            <div id="Thriller" class="nowCinema__tabs__item">
+                                <div class="nowCinema__box">
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-2.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__fine">8.50</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Джокер</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">Триллер</span>,
+                                            <span class="nowCinema__item__genre">драма</span>,
+                                            <span class="nowCinema__item__genre">криминал</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-6.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__bad">4.90</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">3022</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">фантастика</span>,
+                                            <span class="nowCinema__item__genre">триллер</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="nowCinema__allMovie__btn all-btn">Все триллеры</button>
+                            </div>
+                            <div id="Drama" class="nowCinema__tabs__item">
+                                <div class="nowCinema__box">
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-2.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__fine">8.50</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Джокер</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">Триллер</span>,
+                                            <span class="nowCinema__item__genre">драма</span>,
+                                            <span class="nowCinema__item__genre">криминал</span>
+                                        </div>
+                                    </div>
+                                    <div class="nowCinema__item">
+                                        <div class="nowCinema__thumb">
+                                            <img src="./img/movie-poster/movie-poster-5.png" alt=""
+                                                class="nowCinema__img">
+                                            <span class="nowCinema__score score__fine">8.10</span>
+                                            <div class="nowCinema__overlay">
+                                                <a href="#" class="nowCinema__overlay__btn">Карточка фильма</a>
+                                            </div>
+                                        </div>
+
+                                        <p class="nowCinema__item__title">Ford против Ferrari</p>
+                                        <div class="nowCinema__item__genres">
+                                            <span class="nowCinema__item__genre">Биография</span>,
+                                            <span class="nowCinema__item__genre">спорт</span>,
+                                            <span class="nowCinema__item__genre">драма</span>,
+                                            <span class="nowCinema__item__genre">боевик</span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="nowCinema__allMovie__btn all-btn">Все драмы</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section class="subscribe">
+                <div class="container">
+                    <div class="subscribe__wrapper">
+                        <div class="subscribe__inner">
+                            <div class="subscribe__logo"></div>
+                            <h2 class="subscribe__title">Подпишитесь на E-mail рассылку</h2>
+                            <p class="subscribe__description">Если хотиет быть в курсе последних новостей и новинок кино
+                                -
+                                заполните форму ниже и оформите бесплатную E-mail рассылку!</p>
+                            <form action="#" class="subscribe__form">
+                                <input type="text" class="subscribe__mail" placeholder="Введите свой E-mail адрес"
+                                    name="mail" required>
+                                <input type="submit" class="subscribe__btn" value="Подписаться">
+                                <div class="subscribe__privacy">
+                                    <label class="custom__checkbox">
+                                        <input type="checkbox" class="subscribe__checkbox" name="subscribe" required>
+                                        <span class="checkmark"></span>
+                                        Соглашаюсь на условия
+                                    </label>
+                                    <a href="#" class="subscribe__privacy__link">политики
+                                        конфиденциальности</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__wrapper">
+                    <div class="footer__social">
+                        <a href="#" class="footer__social__link">
+                            <svg width="22" height="13" viewBox="0 0 22 13" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M21.2891 1.10938C20.9766 2.4375 18.1641 6.42188 18.1641 6.42188C17.9297 6.8125 17.8125 7.00781 18.1641 7.4375C18.3203 7.63281 21.25 10.4453 21.6797 11.7734C21.875 12.4375 21.5625 12.75 20.8984 12.75H18.5938C17.7344 12.75 17.4609 12.0859 15.8984 10.5234C14.5312 9.19531 13.9453 9 13.5938 9C12.8906 9 13.0078 9.27344 13.0078 11.8906C13.0078 12.4375 12.8125 12.75 11.3672 12.75C8.94531 12.75 6.25 11.3047 4.33594 8.57031C1.48438 4.54688 0.703125 1.53906 0.703125 0.914062C0.703125 0.5625 0.859375 0.25 1.48438 0.25H3.78906C4.375 0.25 4.60938 0.523438 4.84375 1.14844C5.97656 4.42969 7.85156 7.32031 8.63281 7.32031C8.94531 7.32031 9.0625 7.16406 9.0625 6.42188V3.02344C8.98438 1.46094 8.16406 1.34375 8.16406 0.796875C8.16406 0.523438 8.35938 0.25 8.75 0.25H12.3438C12.8516 0.25 13.0078 0.523438 13.0078 1.10938V5.67969C13.0078 6.14844 13.2422 6.34375 13.3594 6.34375C13.6719 6.34375 13.9062 6.14844 14.4531 5.64062C16.0938 3.76562 17.2656 0.914062 17.2656 0.914062C17.4219 0.5625 17.6953 0.25 18.2812 0.25H20.5859C21.2891 0.25 21.4062 0.640625 21.2891 1.10938Z" />
+                            </svg>
+
+                        </a>
+                        <a href="#" class="footer__social__link">
+                            <svg width="19" height="19" viewBox="0 0 19 19" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.75 5.00781C12.2109 5.00781 14.2422 7.03906 14.2422 9.5C14.2422 12 12.2109 13.9922 9.75 13.9922C7.25 13.9922 5.25781 12 5.25781 9.5C5.25781 7.03906 7.25 5.00781 9.75 5.00781ZM9.75 12.4297C11.3516 12.4297 12.6406 11.1406 12.6406 9.5C12.6406 7.89844 11.3516 6.60938 9.75 6.60938C8.10938 6.60938 6.82031 7.89844 6.82031 9.5C6.82031 11.1406 8.14844 12.4297 9.75 12.4297ZM15.4531 4.85156C15.4531 5.4375 14.9844 5.90625 14.3984 5.90625C13.8125 5.90625 13.3438 5.4375 13.3438 4.85156C13.3438 4.26562 13.8125 3.79688 14.3984 3.79688C14.9844 3.79688 15.4531 4.26562 15.4531 4.85156ZM18.4219 5.90625C18.5 7.35156 18.5 11.6875 18.4219 13.1328C18.3438 14.5391 18.0312 15.75 17.0156 16.8047C16 17.8203 14.75 18.1328 13.3438 18.2109C11.8984 18.2891 7.5625 18.2891 6.11719 18.2109C4.71094 18.1328 3.5 17.8203 2.44531 16.8047C1.42969 15.75 1.11719 14.5391 1.03906 13.1328C0.960938 11.6875 0.960938 7.35156 1.03906 5.90625C1.11719 4.5 1.42969 3.25 2.44531 2.23438C3.5 1.21875 4.71094 0.90625 6.11719 0.828125C7.5625 0.75 11.8984 0.75 13.3438 0.828125C14.75 0.90625 16 1.21875 17.0156 2.23438C18.0312 3.25 18.3438 4.5 18.4219 5.90625ZM16.5469 14.6562C17.0156 13.5234 16.8984 10.7891 16.8984 9.5C16.8984 8.25 17.0156 5.51562 16.5469 4.34375C16.2344 3.60156 15.6484 2.97656 14.9062 2.70312C13.7344 2.23438 11 2.35156 9.75 2.35156C8.46094 2.35156 5.72656 2.23438 4.59375 2.70312C3.8125 3.01562 3.22656 3.60156 2.91406 4.34375C2.44531 5.51562 2.5625 8.25 2.5625 9.5C2.5625 10.7891 2.44531 13.5234 2.91406 14.6562C3.22656 15.4375 3.8125 16.0234 4.59375 16.3359C5.72656 16.8047 8.46094 16.6875 9.75 16.6875C11 16.6875 13.7344 16.8047 14.9062 16.3359C15.6484 16.0234 16.2734 15.4375 16.5469 14.6562Z" />
+                            </svg>
+
+                        </a>
+                        <a href="#" class="footer__social__link">
+                            <svg width="12" height="21" viewBox="0 0 12 21" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.8984 11.75H7.96875V20.5H4.0625V11.75H0.859375V8.15625H4.0625V5.38281C4.0625 2.25781 5.9375 0.5 8.78906 0.5C10.1562 0.5 11.6016 0.773438 11.6016 0.773438V3.85938H10C8.4375 3.85938 7.96875 4.79688 7.96875 5.8125V8.15625H11.4453L10.8984 11.75Z" />
+                            </svg>
+
+                        </a>
+                        <a href="#" class="footer__social__link">
+                            <svg width="20" height="17" viewBox="0 0 20 17" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M17.9297 4.4375C17.9297 4.63281 17.9297 4.78906 17.9297 4.98438C17.9297 10.4141 13.8281 16.625 6.28906 16.625C3.94531 16.625 1.79688 15.9609 0 14.7891C0.3125 14.8281 0.625 14.8672 0.976562 14.8672C2.89062 14.8672 4.64844 14.2031 6.05469 13.1094C4.25781 13.0703 2.73438 11.8984 2.22656 10.2578C2.5 10.2969 2.73438 10.3359 3.00781 10.3359C3.35938 10.3359 3.75 10.2578 4.0625 10.1797C2.1875 9.78906 0.78125 8.14844 0.78125 6.15625V6.11719C1.32812 6.42969 1.99219 6.58594 2.65625 6.625C1.52344 5.88281 0.820312 4.63281 0.820312 3.22656C0.820312 2.44531 1.01562 1.74219 1.36719 1.15625C3.39844 3.61719 6.44531 5.25781 9.84375 5.45312C9.76562 5.14062 9.72656 4.82812 9.72656 4.51562C9.72656 2.25 11.5625 0.414062 13.8281 0.414062C15 0.414062 16.0547 0.882812 16.8359 1.70312C17.7344 1.50781 18.6328 1.15625 19.4141 0.6875C19.1016 1.66406 18.4766 2.44531 17.6172 2.95312C18.4375 2.875 19.2578 2.64062 19.9609 2.32812C19.4141 3.14844 18.7109 3.85156 17.9297 4.4375Z" />
+                            </svg>
+
+                        </a>
+                        <a href="#" class="footer__social__link">
+                            <svg width="22" height="15" viewBox="0 0 22 15" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M21.4453 2.38281C21.9141 4.02344 21.9141 7.53906 21.9141 7.53906C21.9141 7.53906 21.9141 11.0156 21.4453 12.6953C21.2109 13.6328 20.4688 14.3359 19.5703 14.5703C17.8906 15 11.25 15 11.25 15C11.25 15 4.57031 15 2.89062 14.5703C1.99219 14.3359 1.25 13.6328 1.01562 12.6953C0.546875 11.0156 0.546875 7.53906 0.546875 7.53906C0.546875 7.53906 0.546875 4.02344 1.01562 2.38281C1.25 1.44531 1.99219 0.703125 2.89062 0.46875C4.57031 0 11.25 0 11.25 0C11.25 0 17.8906 0 19.5703 0.46875C20.4688 0.703125 21.2109 1.44531 21.4453 2.38281ZM9.0625 10.7031L14.6094 7.53906L9.0625 4.375V10.7031Z" />
+                            </svg>
+                        </a>
+
+                    </div>
+                    <nav class="footer__nav">
+                        <ul class="footer__menu">
+                            <li class="footer__menu__item">
+                                <a href="#" class="footer__menu__item__link">Афиша</a>
+                            </li>
+                            <li class="footer__menu__item">
+                                <a href="#" class="footer__menu__item__link">Новости</a>
+                            </li>
+                            <li class="footer__menu__item">
+                                <a href="#" class="footer__menu__item__link">Персоны</a>
+                            </li>
+                            <li class="footer__menu__item">
+                                <a href="#" class="footer__menu__item__link">Рейтинги</a>
+                            </li>
+                            <li class="footer__menu__item">
+                                <a href="#" class="footer__menu__item__link">Рецензии</a>
+                            </li>
+                            <li class="footer__menu__item">
+                                <a href="#" class="footer__menu__item__link">Каталог фильмов</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="footer__copyrights">
+                        2020 &copy; Kinoarea. Все права защищены
+                    </div>
+                    <div class="footer__privacy">
+                        <a href="#" class="footer__privacy__link">Политика конфиденциальности</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
