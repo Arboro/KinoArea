@@ -87,26 +87,22 @@
         <main class="main">
             <section class="nowCinema">
                 <div class="container">
-                    <div class="nowCinema__wrapper">
+                    <div class="nowCinema__wrapper tab-group">
                         <div class="nowCinema__head">
                             <h2 class="nowCinema__title">Сейчас в кино</h2>
                             <div class="nowCinema__line"></div>
                             <div class="nowCinema__tabs__buttons">
-                                <button class="nowCinema__tab-btn tab-btn__active"
-                                    onclick="openMovie(event,'All-Movie')">Все</button>
-                                <button class="nowCinema__tab-btn" onclick="openMovie(event,'Action')">Боевики</button>
-                                <button class="nowCinema__tab-btn"
-                                    onclick="openMovie(event,'Adventure')">Приключения</button>
-                                <button class="nowCinema__tab-btn" onclick="openMovie(event,'Comedy')">Комедии</button>
-                                <button class="nowCinema__tab-btn"
-                                    onclick="openMovie(event,'Sci-fi')">Фантастика</button>
-                                <button class="nowCinema__tab-btn"
-                                    onclick="openMovie(event,'Thriller')">Триллеры</button>
-                                <button class="nowCinema__tab-btn" onclick="openMovie(event,'Drama')">Драма</button>
+                                <button class="nowCinema__tab-btn tab-btn" data-target="tab1">Все</button>
+                                <button class="nowCinema__tab-btn tab-btn" data-target="tab2">Боевики</button>
+                                <button class="nowCinema__tab-btn tab-btn" data-target="tab3">Приключения</button>
+                                <button class="nowCinema__tab-btn tab-btn" data-target="tab4">Комедии</button>
+                                <button class="nowCinema__tab-btn tab-btn" data-target="tab5">Фантастика</button>
+                                <button class="nowCinema__tab-btn tab-btn" data-target="tab6">Триллеры</button>
+                                <button class="nowCinema__tab-btn tab-btn" data-target="tab7">Драма</button>
                             </div>
                         </div>
-                        <div class="nowCinema__body">
-                            <div id="All-Movie" class="nowCinema__tabs__item">
+                        <div class="nowCinema__body tab-contents">
+                            <div id="tab1" class="nowCinema__tabs__item tab-content">
                                 <div class="nowCinema__box">
                                     <div class="nowCinema__item">
                                         <div class="nowCinema__thumb">
@@ -251,7 +247,7 @@
                                 </div>
                                 <button class="nowCinema__allMovie__btn all-btn">Все новинки</button>
                             </div>
-                            <div id="Action" class="nowCinema__tabs__item">
+                            <div id="tab2" class="nowCinema__tabs__item tab-content">
                                 <div class="nowCinema__box">
                                     <div class="nowCinema__item">
                                         <div class="nowCinema__thumb">
@@ -363,7 +359,7 @@
                                 </div>
                                 <button class="nowCinema__allMovie__btn all-btn">Все боевики</button>
                             </div>
-                            <div id="Adventure" class="nowCinema__tabs__item">
+                            <div id="tab3" class="nowCinema__tabs__item tab-content">
                                 <div class="nowCinema__box">
                                     <div class="nowCinema__item">
                                         <div class="nowCinema__thumb">
@@ -404,7 +400,7 @@
                                 </div>
                                 <button class="nowCinema__allMovie__btn all-btn">Все приключения</button>
                             </div>
-                            <div id="Comedy" class="nowCinema__tabs__item">
+                            <div id="tab4" class="nowCinema__tabs__item tab-content">
                                 <div class="nowCinema__box">
                                     <div class="nowCinema__item">
                                         <div class="nowCinema__thumb">
@@ -461,7 +457,7 @@
                                 </div>
                                 <button class="nowCinema__allMovie__btn all-btn">Все комедии</button>
                             </div>
-                            <div id="Sci-fi" class="nowCinema__tabs__item">
+                            <div id="tab5" class="nowCinema__tabs__item tab-content">
                                 <div class="nowCinema__box">
                                     <div class="nowCinema__item">
                                         <div class="nowCinema__thumb">
@@ -519,7 +515,7 @@
                                 </div>
                                 <button class="nowCinema__allMovie__btn all-btn">Вся фантастика</button>
                             </div>
-                            <div id="Thriller" class="nowCinema__tabs__item">
+                            <div id="tab6" class="nowCinema__tabs__item tab-content">
                                 <div class="nowCinema__box">
                                     <div class="nowCinema__item">
                                         <div class="nowCinema__thumb">
@@ -558,7 +554,7 @@
                                 </div>
                                 <button class="nowCinema__allMovie__btn all-btn">Все триллеры</button>
                             </div>
-                            <div id="Drama" class="nowCinema__tabs__item">
+                            <div id="tab7" class="nowCinema__tabs__item tab-content">
                                 <div class="nowCinema__box">
                                     <div class="nowCinema__item">
                                         <div class="nowCinema__thumb">
@@ -600,7 +596,1832 @@
                                 <button class="nowCinema__allMovie__btn all-btn">Все драмы</button>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+            <section class="newTrailer">
+                <div class="container">
+                    <div class="newTrailer__wrapper">
+                        <div class="newTrailer__head">
+                            <h2 class="newTrailer__title">Новые трейлеры</h2>
+                            <a href="#" class="newTrailer__link">Все трейлеры</a>
+                        </div>
+                        <div class="newTrailer__body">
+                            <div class="newTrailer__selected__wrapper">
+                                <iframe class="newTrailer__selected" id="selectedVideo" alt="Selected"></iframe>
+                                <div class="newTrailer__selected__content">
+                                    <div class="newTrailer__selected__description">
+                                        <h4 class="newTrailer__selected__title" id="selectedTitle"></h4>
+                                        <div class="newTrailer__selected__share">
+                                            <button class="newTrailer__selected__share__btn">
+                                                <svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M15.9668 1.33203C15.7324 2.32812 13.623 5.31641 13.623 5.31641C13.4473 5.60938 13.3594 5.75586 13.623 6.07812C13.7402 6.22461 15.9375 8.33398 16.2598 9.33008C16.4062 9.82812 16.1719 10.0625 15.6738 10.0625H13.9453C13.3008 10.0625 13.0957 9.56445 11.9238 8.39258C10.8984 7.39648 10.459 7.25 10.1953 7.25C9.66797 7.25 9.75586 7.45508 9.75586 9.41797C9.75586 9.82812 9.60938 10.0625 8.52539 10.0625C6.70898 10.0625 4.6875 8.97852 3.25195 6.92773C1.11328 3.91016 0.527344 1.6543 0.527344 1.18555C0.527344 0.921875 0.644531 0.6875 1.11328 0.6875H2.8418C3.28125 0.6875 3.45703 0.892578 3.63281 1.36133C4.48242 3.82227 5.88867 5.99023 6.47461 5.99023C6.70898 5.99023 6.79688 5.87305 6.79688 5.31641V2.76758C6.73828 1.5957 6.12305 1.50781 6.12305 1.09766C6.12305 0.892578 6.26953 0.6875 6.5625 0.6875H9.25781C9.63867 0.6875 9.75586 0.892578 9.75586 1.33203V4.75977C9.75586 5.11133 9.93164 5.25781 10.0195 5.25781C10.2539 5.25781 10.4297 5.11133 10.8398 4.73047C12.0703 3.32422 12.9492 1.18555 12.9492 1.18555C13.0664 0.921875 13.2715 0.6875 13.7109 0.6875H15.4395C15.9668 0.6875 16.0547 0.980469 15.9668 1.33203Z" />
+                                                </svg>
 
+                                            </button>
+                                            <button class="newTrailer__selected__share__btn">
+                                                <svg width="15" height="14" viewBox="0 0 15 14" fill="currentColor"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.5625 4.00586C9.4082 4.00586 10.9316 5.5293 10.9316 7.375C10.9316 9.25 9.4082 10.7441 7.5625 10.7441C5.6875 10.7441 4.19336 9.25 4.19336 7.375C4.19336 5.5293 5.6875 4.00586 7.5625 4.00586ZM7.5625 9.57227C8.76367 9.57227 9.73047 8.60547 9.73047 7.375C9.73047 6.17383 8.76367 5.20703 7.5625 5.20703C6.33203 5.20703 5.36523 6.17383 5.36523 7.375C5.36523 8.60547 6.36133 9.57227 7.5625 9.57227ZM11.8398 3.88867C11.8398 4.32812 11.4883 4.67969 11.0488 4.67969C10.6094 4.67969 10.2578 4.32812 10.2578 3.88867C10.2578 3.44922 10.6094 3.09766 11.0488 3.09766C11.4883 3.09766 11.8398 3.44922 11.8398 3.88867ZM14.0664 4.67969C14.125 5.76367 14.125 9.01562 14.0664 10.0996C14.0078 11.1543 13.7734 12.0625 13.0117 12.8535C12.25 13.6152 11.3125 13.8496 10.2578 13.9082C9.17383 13.9668 5.92188 13.9668 4.83789 13.9082C3.7832 13.8496 2.875 13.6152 2.08398 12.8535C1.32227 12.0625 1.08789 11.1543 1.0293 10.0996C0.970703 9.01562 0.970703 5.76367 1.0293 4.67969C1.08789 3.625 1.32227 2.6875 2.08398 1.92578C2.875 1.16406 3.7832 0.929688 4.83789 0.871094C5.92188 0.8125 9.17383 0.8125 10.2578 0.871094C11.3125 0.929688 12.25 1.16406 13.0117 1.92578C13.7734 2.6875 14.0078 3.625 14.0664 4.67969ZM12.6602 11.2422C13.0117 10.3926 12.9238 8.3418 12.9238 7.375C12.9238 6.4375 13.0117 4.38672 12.6602 3.50781C12.4258 2.95117 11.9863 2.48242 11.4297 2.27734C10.5508 1.92578 8.5 2.01367 7.5625 2.01367C6.5957 2.01367 4.54492 1.92578 3.69531 2.27734C3.10938 2.51172 2.66992 2.95117 2.43555 3.50781C2.08398 4.38672 2.17188 6.4375 2.17188 7.375C2.17188 8.3418 2.08398 10.3926 2.43555 11.2422C2.66992 11.8281 3.10938 12.2676 3.69531 12.502C4.54492 12.8535 6.5957 12.7656 7.5625 12.7656C8.5 12.7656 10.5508 12.8535 11.4297 12.502C11.9863 12.2676 12.4551 11.8281 12.6602 11.2422Z" />
+                                                </svg>
+
+                                            </button>
+                                            <button class="newTrailer__selected__share__btn">
+                                                <svg width="9" height="16" viewBox="0 0 9 16" fill="currentColor"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M8.17383 9.3125H5.97656V15.875H3.04688V9.3125H0.644531V6.61719H3.04688V4.53711C3.04688 2.19336 4.45312 0.875 6.5918 0.875C7.61719 0.875 8.70117 1.08008 8.70117 1.08008V3.39453H7.5C6.32812 3.39453 5.97656 4.09766 5.97656 4.85938V6.61719H8.58398L8.17383 9.3125Z" />
+                                                </svg>
+
+                                            </button>
+                                            <button class="newTrailer__selected__share__btn">
+                                                <svg width="15" height="13" viewBox="0 0 15 13" fill="currentColor"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.4473 3.32812C13.4473 3.47461 13.4473 3.5918 13.4473 3.73828C13.4473 7.81055 10.3711 12.4688 4.7168 12.4688C2.95898 12.4688 1.34766 11.9707 0 11.0918C0.234375 11.1211 0.46875 11.1504 0.732422 11.1504C2.16797 11.1504 3.48633 10.6523 4.54102 9.83203C3.19336 9.80273 2.05078 8.92383 1.66992 7.69336C1.875 7.72266 2.05078 7.75195 2.25586 7.75195C2.51953 7.75195 2.8125 7.69336 3.04688 7.63477C1.64062 7.3418 0.585938 6.11133 0.585938 4.61719V4.58789C0.996094 4.82227 1.49414 4.93945 1.99219 4.96875C1.14258 4.41211 0.615234 3.47461 0.615234 2.41992C0.615234 1.83398 0.761719 1.30664 1.02539 0.867188C2.54883 2.71289 4.83398 3.94336 7.38281 4.08984C7.32422 3.85547 7.29492 3.62109 7.29492 3.38672C7.29492 1.6875 8.67188 0.310547 10.3711 0.310547C11.25 0.310547 12.041 0.662109 12.627 1.27734C13.3008 1.13086 13.9746 0.867188 14.5605 0.515625C14.3262 1.24805 13.8574 1.83398 13.2129 2.21484C13.8281 2.15625 14.4434 1.98047 14.9707 1.74609C14.5605 2.36133 14.0332 2.88867 13.4473 3.32812Z" />
+                                                </svg>
+
+                                            </button>
+                                            <button class="newTrailer__selected__share__btn">
+                                                <svg width="17" height="3" viewBox="0 0 17 3" fill="currentColor"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M3 1.5C3 2.32843 2.32843 3 1.5 3C0.671573 3 0 2.32843 0 1.5C0 0.671573 0.671573 0 1.5 0C2.32843 0 3 0.671573 3 1.5Z" />
+                                                    <path
+                                                        d="M3 1.5C3 2.32843 2.32843 3 1.5 3C0.671573 3 0 2.32843 0 1.5C0 0.671573 0.671573 0 1.5 0C2.32843 0 3 0.671573 3 1.5Z" />
+                                                    <path
+                                                        d="M3 1.5C3 2.32843 2.32843 3 1.5 3C0.671573 3 0 2.32843 0 1.5C0 0.671573 0.671573 0 1.5 0C2.32843 0 3 0.671573 3 1.5Z" />
+                                                    <path
+                                                        d="M10 1.5C10 2.32843 9.32843 3 8.5 3C7.67157 3 7 2.32843 7 1.5C7 0.671573 7.67157 0 8.5 0C9.32843 0 10 0.671573 10 1.5Z" />
+                                                    <path
+                                                        d="M10 1.5C10 2.32843 9.32843 3 8.5 3C7.67157 3 7 2.32843 7 1.5C7 0.671573 7.67157 0 8.5 0C9.32843 0 10 0.671573 10 1.5Z" />
+                                                    <path
+                                                        d="M10 1.5C10 2.32843 9.32843 3 8.5 3C7.67157 3 7 2.32843 7 1.5C7 0.671573 7.67157 0 8.5 0C9.32843 0 10 0.671573 10 1.5Z" />
+                                                    <path
+                                                        d="M17 1.5C17 2.32843 16.3284 3 15.5 3C14.6716 3 14 2.32843 14 1.5C14 0.671573 14.6716 0 15.5 0C16.3284 0 17 0.671573 17 1.5Z" />
+                                                    <path
+                                                        d="M17 1.5C17 2.32843 16.3284 3 15.5 3C14.6716 3 14 2.32843 14 1.5C14 0.671573 14.6716 0 15.5 0C16.3284 0 17 0.671573 17 1.5Z" />
+                                                    <path
+                                                        d="M17 1.5C17 2.32843 16.3284 3 15.5 3C14.6716 3 14 2.32843 14 1.5C14 0.671573 14.6716 0 15.5 0C16.3284 0 17 0.671573 17 1.5Z" />
+                                                </svg>
+
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="newTrailer__selected__rating">
+                                        <div class="newTrailer__selected__rating__item">
+                                            <button class="rating__item__btn rating__item__btn-like" id="like">
+                                                <svg width="27" height="26" viewBox="0 0 27 26" fill="currentColor"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_1_1775)">
+                                                        <path
+                                                            d="M6.23803 12.262H3.18512C2.76363 12.262 2.42188 12.6037 2.42188 13.0252V25.2366C2.42188 25.6581 2.76358 25.9999 3.18512 25.9999H6.23798C6.65946 25.9999 7.00122 25.6582 7.00122 25.2366V13.0252C7.00122 12.6037 6.65956 12.262 6.23803 12.262Z" />
+                                                        <path
+                                                            d="M25.3049 14.2852C25.1703 13.1012 24.0643 12.2621 22.8727 12.2621H16.9225C17.4281 11.3566 17.6996 8.79556 17.6875 7.74937C17.6676 6.01763 16.2335 4.62988 14.5017 4.62988H13.8719C13.45 4.62988 13.1086 4.97123 13.1086 5.39312C13.1086 7.15802 12.4214 10.3436 11.1253 11.6398C10.253 12.5121 9.50719 12.8282 8.5293 13.317V24.769C10.0265 25.2681 11.9274 26.0001 14.8248 26.0001H19.8174C21.4625 26.0001 22.7437 24.4765 22.1062 22.8667C23.0774 22.6021 23.7937 21.7114 23.7937 20.6575C23.7937 20.3601 23.7363 20.0754 23.6327 19.8138C25.2693 19.3679 25.8717 17.3471 24.7358 16.0782C25.1531 15.612 25.3833 14.9743 25.3049 14.2852Z" />
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_1_1775">
+                                                            <rect width="26" height="26"
+                                                                transform="translate(0.871094)" />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </button>
+                                            <p class="rating__item__amount">3 245</p>
+                                        </div>
+                                        <div class="newTrailer__selected__rating__item">
+                                            <button class="rating__item__btn rating__item__btn-dislike" id="dislike">
+                                                <svg width="26" height="27" viewBox="0 0 26 27" fill="currentColor"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_1_1766)">
+                                                        <path
+                                                            d="M20.6331 14.6091L23.686 14.6091C24.1075 14.6091 24.4492 14.2674 24.4492 13.8459L24.4492 1.63445C24.4492 1.21296 24.1075 0.871204 23.686 0.871204L20.6331 0.871204C20.2116 0.871204 19.8699 1.21291 19.8699 1.63444L19.8699 13.8459C19.8699 14.2674 20.2115 14.6091 20.6331 14.6091Z" />
+                                                        <path
+                                                            d="M1.56619 12.5859C1.70081 13.7698 2.80678 14.609 3.99836 14.609L9.94864 14.609C9.44296 15.5145 9.17153 18.0755 9.18357 19.1217C9.20353 20.8535 10.6376 22.2412 12.3694 22.2412L12.9992 22.2412C13.4211 22.2412 13.7625 21.8999 13.7625 21.478C13.7625 19.7131 14.4497 16.5275 15.7458 15.2313C16.6181 14.359 17.3639 14.0428 18.3418 13.5541L18.3418 2.10206C16.8446 1.60304 14.9437 0.871029 12.0463 0.871028L7.05365 0.871028C5.4086 0.871028 4.12739 2.39461 4.76485 4.00438C3.79366 4.26895 3.07744 5.15965 3.07744 6.21356C3.07744 6.51098 3.13482 6.79566 3.23842 7.05729C1.60179 7.5032 0.999374 9.52403 2.1353 10.7929C1.71798 11.2591 1.48784 11.8968 1.56619 12.5859Z" />
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_1_1766">
+                                                            <rect width="26" height="26"
+                                                                transform="translate(26 26.8711) rotate(-180)" />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+
+                                            </button>
+                                            <p class="rating__item__amount">420</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="newTrailer__scroll__wrapper" id="scrollContainer">
+                                <div class="newTrailer__scroll__content">
+                                    <div class="newTrailer__scroll__item" data-title="Мулан">
+                                        <!-- <img src="./img/test/test-1.png" class="newTrailer__scroll__item__img"
+                                        alt="Cinque Terre"> -->
+                                        <div class="newTrailer__video__wrapper">
+                                            <iframe src="https://www.youtube.com/embed/KK8FHdFluOQ?si=ScxJaYS_EKXK9CmO"
+                                                title="YouTube video player" frameborder="0"
+                                                class="newTrailer__scroll__item__img"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                referrerpolicy="strict-origin-when-cross-origin"
+                                                allowfullscreen></iframe>
+                                        </div>
+
+                                        <h5 class="newTrailer__scroll__item__title">Мулан</h5>
+                                    </div>
+                                    <div class="newTrailer__scroll__item" data-title="Форсаж 9">
+                                        <!-- <img src="./img/test/test-2.png" class="newTrailer__scroll__item__img"
+                                        alt="Cinque Terre"> -->
+                                        <div class="newTrailer__video__wrapper">
+                                            <iframe src="https://www.youtube.com/embed/FUK2kdPsBws?si=NkJrbwTe27ZnGx5h"
+                                                title="YouTube video player" frameborder="0"
+                                                class="newTrailer__scroll__item__img"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                referrerpolicy="strict-origin-when-cross-origin"
+                                                allowfullscreen></iframe>
+                                        </div>
+
+                                        <h5 class="newTrailer__scroll__item__title">Форсаж 9</h5>
+                                    </div>
+                                    <div class="newTrailer__scroll__item" data-title="Чёрная Вдова">
+                                        <!-- <img src="./img/test/test-3.png" class="newTrailer__scroll__item__img"
+                                        alt="Cinque Terre"> -->
+                                        <div class="newTrailer__video__wrapper">
+                                            <iframe src="https://www.youtube.com/embed/ybji16u608U?si=wkkrxxk8fCMfoFYu"
+                                                title="YouTube video player" frameborder="0"
+                                                class="newTrailer__scroll__item__img"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                referrerpolicy="strict-origin-when-cross-origin"
+                                                allowfullscreen></iframe>
+                                        </div>
+
+                                        <h5 class="newTrailer__scroll__item__title">Чёрная Вдова</h5>
+                                    </div>
+                                    <div class="newTrailer__scroll__item" data-title="Тихое место 2">
+                                        <!-- <img src="./img/test/test-4.png" class="newTrailer__scroll__item__img"
+                                        alt="Cinque Terre"> -->
+                                        <div class="newTrailer__video__wrapper">
+                                            <iframe src="https://www.youtube.com/embed/WR7cc5t7tv8?si=pXjQMNVl9e6Tgtqz"
+                                                title="YouTube video player" frameborder="0"
+                                                class="newTrailer__scroll__item__img"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                referrerpolicy="strict-origin-when-cross-origin"
+                                                allowfullscreen></iframe>
+                                        </div>
+
+                                        <h5 class="newTrailer__scroll__item__title">Тихое место 2</h5>
+                                    </div>
+                                    <div class="newTrailer__scroll__item" data-title="Мулан">
+                                        <!-- <img src="./img/test/test-1.png" class="newTrailer__scroll__item__img"
+                                                                                                        alt="Cinque Terre"> -->
+                                        <div class="newTrailer__video__wrapper">
+                                            <iframe src="https://www.youtube.com/embed/KK8FHdFluOQ?si=ScxJaYS_EKXK9CmO"
+                                                title="YouTube video player" frameborder="0"
+                                                class="newTrailer__scroll__item__img"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                referrerpolicy="strict-origin-when-cross-origin"
+                                                allowfullscreen></iframe>
+                                        </div>
+
+                                        <h5 class="newTrailer__scroll__item__title">Мулан</h5>
+                                    </div>
+                                    <div class="newTrailer__scroll__item" data-title="Форсаж 9">
+                                        <!-- <img src="./img/test/test-2.png" class="newTrailer__scroll__item__img"
+                                                                                                        alt="Cinque Terre"> -->
+                                        <div class="newTrailer__video__wrapper">
+                                            <iframe src="https://www.youtube.com/embed/FUK2kdPsBws?si=NkJrbwTe27ZnGx5h"
+                                                title="YouTube video player" frameborder="0"
+                                                class="newTrailer__scroll__item__img"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                referrerpolicy="strict-origin-when-cross-origin"
+                                                allowfullscreen></iframe>
+                                        </div>
+
+                                        <h5 class="newTrailer__scroll__item__title">Форсаж 9</h5>
+                                    </div>
+                                    <div class="newTrailer__scroll__item" data-title="Чёрная Вдова">
+                                        <!-- <img src="./img/test/test-3.png" class="newTrailer__scroll__item__img"
+                                                                                                        alt="Cinque Terre"> -->
+                                        <div class="newTrailer__video__wrapper">
+                                            <iframe src="https://www.youtube.com/embed/ybji16u608U?si=wkkrxxk8fCMfoFYu"
+                                                title="YouTube video player" frameborder="0"
+                                                class="newTrailer__scroll__item__img"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                referrerpolicy="strict-origin-when-cross-origin"
+                                                allowfullscreen></iframe>
+                                        </div>
+
+                                        <h5 class="newTrailer__scroll__item__title">Чёрная Вдова</h5>
+                                    </div>
+                                    <div class="newTrailer__scroll__item" data-title="Тихое место 2">
+                                        <!-- <img src="./img/test/test-4.png" class="newTrailer__scroll__item__img"
+                                                                                                        alt="Cinque Terre"> -->
+                                        <div class="newTrailer__video__wrapper">
+                                            <iframe src="https://www.youtube.com/embed/WR7cc5t7tv8?si=pXjQMNVl9e6Tgtqz"
+                                                title="YouTube video player" frameborder="0"
+                                                class="newTrailer__scroll__item__img"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                referrerpolicy="strict-origin-when-cross-origin"
+                                                allowfullscreen></iframe>
+                                        </div>
+
+                                        <h5 class="newTrailer__scroll__item__title">Тихое место 2</h5>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+            </section>
+            <section class="popularMovie">
+                <div class="container">
+                    <div class="popularMovie__wrapper tab-group">
+                        <div class="popularMovie__head">
+                            <h2 class="popularMovie__title">Популярные фильмы</h2>
+                            <div class="popularMovie__line"></div>
+                            <div class="popularMovie__tabs__buttons tab-buttons">
+                                <button class="popularMovie__tab-btn tab-btn" data-target="tab10">Всё время</button>
+                                <button class="popularMovie__tab-btn tab-btn" data-target="tab11">2020</button>
+                                <button class="popularMovie__tab-btn tab-btn" data-target="tab12">2019</button>
+                                <button class="popularMovie__tab-btn tab-btn" data-target="tab13">2018</button>
+                                <button class="popularMovie__tab-btn tab-btn" data-target="tab14">2017</button>
+                                <button class="popularMovie__tab-btn tab-btn" data-target="tab15">2016</button>
+                                <button class="popularMovie__tab-btn tab-btn" data-target="tab16">2015</button>
+                            </div>
+                        </div>
+                        <div class="popularMovie__body tab-contents">
+                            <div id="tab10" class="popularMovie__tabs__item tab-content">
+                                <div class="carousel-wrapper">
+                                    <div class="carousel">
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-2.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">8.50</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Джокер</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>,
+                                                <span class="popularMovie__item__genre">криминал</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-10.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.80</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">История игрушек 4</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Мультфильм</span>,
+                                                <span class="popularMovie__item__genre">фэнтези</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>,
+                                                <span class="popularMovie__item__genre">приключения</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-11.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.10</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Солнцестояние</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Ужасы</span>,
+                                                <span class="popularMovie__item__genre">триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-9.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.70</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Однажды в… Голливуде</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Драма</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-2.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">8.50</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Джокер</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>,
+                                                <span class="popularMovie__item__genre">криминал</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-10.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.80</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">История игрушек 4</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Мультфильм</span>,
+                                                <span class="popularMovie__item__genre">фэнтези</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>,
+                                                <span class="popularMovie__item__genre">приключения</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-11.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.10</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Солнцестояние</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Ужасы</span>,
+                                                <span class="popularMovie__item__genre">триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-9.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.70</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Однажды в… Голливуде</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Драма</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-2.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">8.50</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Джокер</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>,
+                                                <span class="popularMovie__item__genre">криминал</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-10.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.80</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">История игрушек 4</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Мультфильм</span>,
+                                                <span class="popularMovie__item__genre">фэнтези</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>,
+                                                <span class="popularMovie__item__genre">приключения</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-11.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.10</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Солнцестояние</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Ужасы</span>,
+                                                <span class="popularMovie__item__genre">триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-9.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.70</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Однажды в… Голливуде</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Драма</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nav-buttons">
+                                        <button class="prev"></button>
+                                        <span class="nav__buttons__count">4/15</span>
+                                        <button class="next"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab11" class="popularMovie__tabs__item tab-content">
+                                <div class="carousel-wrapper">
+                                    <div class="carousel">
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-4.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.80</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">История игрушек 4</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Мультфильм</span>,
+                                                <span class="popularMovie__item__genre">фэнтези</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>,
+                                                <span class="popularMovie__item__genre">приключения</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-3.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.10</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Солнцестояние</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Ужасы</span>,
+                                                <span class="popularMovie__item__genre">триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-2.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.70</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Однажды в… Голливуде</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Драма</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-1.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">8.50</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Джокер</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>,
+                                                <span class="popularMovie__item__genre">криминал</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-8.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.80</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">История игрушек 4</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Мультфильм</span>,
+                                                <span class="popularMovie__item__genre">фэнтези</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>,
+                                                <span class="popularMovie__item__genre">приключения</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-7.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.10</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Солнцестояние</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Ужасы</span>,
+                                                <span class="popularMovie__item__genre">триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-9.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.70</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Однажды в… Голливуде</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Драма</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nav-buttons">
+                                        <button class="prev"></button>
+                                        <span class="nav__buttons__count">4/15</span>
+                                        <button class="next"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab12" class="popularMovie__tabs__item tab-content">
+                                <div class="carousel-wrapper">
+                                    <div class="carousel">
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-2.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">8.50</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Джокер</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>,
+                                                <span class="popularMovie__item__genre">криминал</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-10.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.80</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">История игрушек 4</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Мультфильм</span>,
+                                                <span class="popularMovie__item__genre">фэнтези</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>,
+                                                <span class="popularMovie__item__genre">приключения</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-11.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.10</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Солнцестояние</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Ужасы</span>,
+                                                <span class="popularMovie__item__genre">триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-9.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.70</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Однажды в… Голливуде</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Драма</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-2.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">8.50</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Джокер</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>,
+                                                <span class="popularMovie__item__genre">криминал</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-10.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.80</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">История игрушек 4</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Мультфильм</span>,
+                                                <span class="popularMovie__item__genre">фэнтези</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>,
+                                                <span class="popularMovie__item__genre">приключения</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-11.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.10</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Солнцестояние</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Ужасы</span>,
+                                                <span class="popularMovie__item__genre">триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-9.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.70</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Однажды в… Голливуде</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Драма</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-2.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">8.50</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Джокер</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>,
+                                                <span class="popularMovie__item__genre">криминал</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-10.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.80</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">История игрушек 4</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Мультфильм</span>,
+                                                <span class="popularMovie__item__genre">фэнтези</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>,
+                                                <span class="popularMovie__item__genre">приключения</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-11.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.10</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Солнцестояние</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Ужасы</span>,
+                                                <span class="popularMovie__item__genre">триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-9.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.70</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Однажды в… Голливуде</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Драма</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nav-buttons">
+                                        <button class="prev"></button>
+                                        <span class="nav__buttons__count">4/15</span>
+                                        <button class="next"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab13" class="popularMovie__tabs__item tab-content">
+                                <div class="carousel-wrapper">
+                                    <div class="carousel">
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-10.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.80</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">История игрушек 4</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Мультфильм</span>,
+                                                <span class="popularMovie__item__genre">фэнтези</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>,
+                                                <span class="popularMovie__item__genre">приключения</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-11.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.10</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Солнцестояние</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Ужасы</span>,
+                                                <span class="popularMovie__item__genre">триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-9.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.70</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Однажды в… Голливуде</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Драма</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-2.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">8.50</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Джокер</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>,
+                                                <span class="popularMovie__item__genre">криминал</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-10.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.80</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">История игрушек 4</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Мультфильм</span>,
+                                                <span class="popularMovie__item__genre">фэнтези</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>,
+                                                <span class="popularMovie__item__genre">приключения</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-11.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.10</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Солнцестояние</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Ужасы</span>,
+                                                <span class="popularMovie__item__genre">триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-9.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.70</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Однажды в… Голливуде</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Драма</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-2.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">8.50</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Джокер</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>,
+                                                <span class="popularMovie__item__genre">криминал</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-10.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.80</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">История игрушек 4</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Мультфильм</span>,
+                                                <span class="popularMovie__item__genre">фэнтези</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>,
+                                                <span class="popularMovie__item__genre">приключения</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-11.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.10</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Солнцестояние</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Ужасы</span>,
+                                                <span class="popularMovie__item__genre">триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-9.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.70</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Однажды в… Голливуде</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Драма</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nav-buttons">
+                                        <button class="prev"></button>
+                                        <span class="nav__buttons__count">4/15</span>
+                                        <button class="next"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab14" class="popularMovie__tabs__item tab-content">
+                                <div class="carousel-wrapper">
+                                    <div class="carousel">
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-2.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">8.50</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Джокер</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>,
+                                                <span class="popularMovie__item__genre">криминал</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-10.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.80</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">История игрушек 4</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Мультфильм</span>,
+                                                <span class="popularMovie__item__genre">фэнтези</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>,
+                                                <span class="popularMovie__item__genre">приключения</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-11.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.10</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Солнцестояние</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Ужасы</span>,
+                                                <span class="popularMovie__item__genre">триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-9.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.70</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Однажды в… Голливуде</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Драма</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-2.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">8.50</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Джокер</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>,
+                                                <span class="popularMovie__item__genre">криминал</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-10.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.80</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">История игрушек 4</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Мультфильм</span>,
+                                                <span class="popularMovie__item__genre">фэнтези</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>,
+                                                <span class="popularMovie__item__genre">приключения</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-11.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.10</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Солнцестояние</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Ужасы</span>,
+                                                <span class="popularMovie__item__genre">триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-9.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.70</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Однажды в… Голливуде</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Драма</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-2.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">8.50</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Джокер</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>,
+                                                <span class="popularMovie__item__genre">криминал</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-10.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.80</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">История игрушек 4</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Мультфильм</span>,
+                                                <span class="popularMovie__item__genre">фэнтези</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>,
+                                                <span class="popularMovie__item__genre">приключения</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-11.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.10</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Солнцестояние</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Ужасы</span>,
+                                                <span class="popularMovie__item__genre">триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-9.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.70</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Однажды в… Голливуде</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Драма</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nav-buttons">
+                                        <button class="prev"></button>
+                                        <span class="nav__buttons__count">4/15</span>
+                                        <button class="next"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab15" class="popularMovie__tabs__item tab-content">
+                                <div class="carousel-wrapper">
+                                    <div class="carousel">
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-2.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">8.50</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Джокер</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>,
+                                                <span class="popularMovie__item__genre">криминал</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-5.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.80</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">История игрушек 4</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Мультфильм</span>,
+                                                <span class="popularMovie__item__genre">фэнтези</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>,
+                                                <span class="popularMovie__item__genre">приключения</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-6.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.10</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Солнцестояние</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Ужасы</span>,
+                                                <span class="popularMovie__item__genre">триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-3.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.70</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Однажды в… Голливуде</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Драма</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-2.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">8.50</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Джокер</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>,
+                                                <span class="popularMovie__item__genre">криминал</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-10.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.80</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">История игрушек 4</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Мультфильм</span>,
+                                                <span class="popularMovie__item__genre">фэнтези</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>,
+                                                <span class="popularMovie__item__genre">приключения</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-11.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.10</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Солнцестояние</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Ужасы</span>,
+                                                <span class="popularMovie__item__genre">триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-9.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.70</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Однажды в… Голливуде</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Драма</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nav-buttons">
+                                        <button class="prev"></button>
+                                        <span class="nav__buttons__count">4/15</span>
+                                        <button class="next"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab16" class="popularMovie__tabs__item tab-content">
+                                <div class="carousel-wrapper">
+                                    <div class="carousel">
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-2.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">8.50</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Джокер</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>,
+                                                <span class="popularMovie__item__genre">криминал</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-10.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.80</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">История игрушек 4</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Мультфильм</span>,
+                                                <span class="popularMovie__item__genre">фэнтези</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>,
+                                                <span class="popularMovie__item__genre">приключения</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-11.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.10</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Солнцестояние</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Ужасы</span>,
+                                                <span class="popularMovie__item__genre">триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-9.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.70</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Однажды в… Голливуде</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Драма</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-2.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">8.50</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Джокер</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>,
+                                                <span class="popularMovie__item__genre">криминал</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-10.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.80</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">История игрушек 4</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Мультфильм</span>,
+                                                <span class="popularMovie__item__genre">фэнтези</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>,
+                                                <span class="popularMovie__item__genre">приключения</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-11.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.10</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Солнцестояние</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Ужасы</span>,
+                                                <span class="popularMovie__item__genre">триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-9.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.70</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Однажды в… Голливуде</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Драма</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-2.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">8.50</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Джокер</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>,
+                                                <span class="popularMovie__item__genre">криминал</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-10.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.80</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">История игрушек 4</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Мультфильм</span>,
+                                                <span class="popularMovie__item__genre">фэнтези</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>,
+                                                <span class="popularMovie__item__genre">приключения</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-11.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.10</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Солнцестояние</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Ужасы</span>,
+                                                <span class="popularMovie__item__genre">триллер</span>,
+                                                <span class="popularMovie__item__genre">драма</span>
+                                            </div>
+                                        </div>
+                                        <div class="popularMovie__item">
+                                            <div class="popularMovie__thumb">
+                                                <img src="./img/movie-poster/movie-poster-9.png" alt=""
+                                                    class="popularMovie__img">
+                                                <span class="popularMovie__score score__normally">7.70</span>
+                                                <div class="popularMovie__overlay">
+                                                    <a href="#" class="popularMovie__overlay__btn">Карточка фильма</a>
+                                                </div>
+                                            </div>
+
+                                            <p class="popularMovie__item__title">Однажды в… Голливуде</p>
+                                            <div class="popularMovie__item__genres">
+                                                <span class="popularMovie__item__genre">Драма</span>,
+                                                <span class="popularMovie__item__genre">комедия</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nav-buttons">
+                                        <button class="prev"></button>
+                                        <span class="nav__buttons__count">4/15</span>
+                                        <button class="next"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="boxOffice">
+                <div class="container">
+                    <div class="boxOffice__wrapper tab-group">
+                        <div class="boxOffice__head ">
+                            <div class="boxOffice__head__description">
+                                <h2 class="boxOffice__title">Кассовые сборы</h2>
+                                <p class="boxOffice__dates">13 марта — 15 марта</p>
+                            </div>
+                            <div class="boxOffice__line"></div>
+                            <div class="boxOffice__tabs__buttons">
+                                <button class="boxOffice__tab-btn tab-btn" data-target="tab20">Россия</button>
+                                <button class="boxOffice__tab-btn tab-btn" data-target="tab21">Весь мир</button>
+                                <button class="boxOffice__tab-btn tab-btn" data-target="tab22">США и Канада</button>
+                            </div>
+                        </div>
+                        <div class="boxOffice__body tab-contents">
+                            <div id="tab20" class="boxOffice__tabs__item tab-content">
+                                <div class="boxOffice__box">
+                                    <div class="boxOffice__item">
+                                        <div class="boxOffice__thumb">
+                                            <a href="#" class="boxOffice__thumb__link">
+                                                <img src="./img/movie-poster/movie-poster-20.png" alt=""
+                                                    class="boxOffice__img">
+                                            </a>
+                                        </div>
+                                        <div class="boxOffice__item__content">
+                                            <a href="#" class="boxOffice__item__title">1. Бладшот</a>
+                                            <span class="boxOffice__item__last">$13 млн</span>
+                                            <span class="boxOffice__item__all">$15.1 млн за 4 недели</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="boxOffice__item">
+                                        <div class="boxOffice__thumb">
+                                            <a href="#" class="boxOffice__thumb__link">
+                                                <img src="./img/movie-poster/movie-poster-21.png" alt=""
+                                                    class="boxOffice__img">
+                                            </a>
+                                        </div>
+                                        <div class="boxOffice__item__content">
+                                            <a href="#" class="boxOffice__item__title">2. Вперёд</a>
+                                            <span class="boxOffice__item__last">$6.8 млн</span>
+                                            <span class="boxOffice__item__all">$41.4 млн за 4 недели</span>
+                                        </div>
+                                    </div>
+                                    <div class="boxOffice__item">
+                                        <div class="boxOffice__thumb">
+                                            <a href="#" class="boxOffice__thumb__link">
+                                                <img src="./img/movie-poster/movie-poster-22.png" alt=""
+                                                    class="boxOffice__img">
+                                            </a>
+                                        </div>
+                                        <div class="boxOffice__item__content">
+                                            <a href="#" class="boxOffice__item__title">3. Человек-невидимка</a>
+                                            <span class="boxOffice__item__last">$6.2 млн</span>
+                                            <span class="boxOffice__item__all">$58.3 млн за 3 недели</span>
+                                        </div>
+                                    </div>
+                                    <div class="boxOffice__item">
+                                        <div class="boxOffice__thumb">
+                                            <a href="#" class="boxOffice__thumb__link">
+                                                <img src="./img/movie-poster/movie-poster-23.png" alt=""
+                                                    class="boxOffice__img">
+                                            </a>
+                                        </div>
+                                        <div class="boxOffice__item__content">
+                                            <a href="#" class="boxOffice__item__title">4. Соник в кино</a>
+                                            <span class="boxOffice__item__last">$2.9 млн</span>
+                                            <span class="boxOffice__item__all">$15.1 млн за 4 недели</span>
+                                        </div>
+                                    </div>
+                                    <div class="boxOffice__item">
+                                        <div class="boxOffice__thumb">
+                                            <a href="#" class="boxOffice__thumb__link">
+                                                <img src="./img/movie-poster/movie-poster-24.png" alt=""
+                                                    class="boxOffice__img">
+                                            </a>
+                                        </div>
+                                        <div class="boxOffice__item__content">
+                                            <a href="#" class="boxOffice__item__title">5. Джентльмены</a>
+                                            <span class="boxOffice__item__last">$1.8 млн</span>
+                                            <span class="boxOffice__item__all">$78.7 млн за 11 недель</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab21" class="boxOffice__tabs__item tab-content">
+                                <div class="boxOffice__box">
+
+                                    <div class="boxOffice__item">
+                                        <div class="boxOffice__thumb">
+                                            <a href="#" class="boxOffice__thumb__link">
+                                                <img src="./img/movie-poster/movie-poster-21.png" alt=""
+                                                    class="boxOffice__img">
+                                            </a>
+                                        </div>
+                                        <div class="boxOffice__item__content">
+                                            <a href="#" class="boxOffice__item__title">1. Вперёд</a>
+                                            <span class="boxOffice__item__last">$6.8 млн</span>
+                                            <span class="boxOffice__item__all">$41.4 млн за 4 недели</span>
+                                        </div>
+                                    </div>
+                                    <div class="boxOffice__item">
+                                        <div class="boxOffice__thumb">
+                                            <a href="#" class="boxOffice__thumb__link">
+                                                <img src="./img/movie-poster/movie-poster-20.png" alt=""
+                                                    class="boxOffice__img">
+                                            </a>
+                                        </div>
+                                        <div class="boxOffice__item__content">
+                                            <a href="#" class="boxOffice__item__title">2. Бладшот</a>
+                                            <span class="boxOffice__item__last">$13 млн</span>
+                                            <span class="boxOffice__item__all">$15.1 млн за 4 недели</span>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="boxOffice__item">
+                                        <div class="boxOffice__thumb">
+                                            <a href="#" class="boxOffice__thumb__link">
+                                                <img src="./img/movie-poster/movie-poster-23.png" alt=""
+                                                    class="boxOffice__img">
+                                            </a>
+                                        </div>
+                                        <div class="boxOffice__item__content">
+                                            <a href="#" class="boxOffice__item__title">3. Соник в кино</a>
+                                            <span class="boxOffice__item__last">$2.9 млн</span>
+                                            <span class="boxOffice__item__all">$15.1 млн за 4 недели</span>
+                                        </div>
+                                    </div>
+                                    <div class="boxOffice__item">
+                                        <div class="boxOffice__thumb">
+                                            <a href="#" class="boxOffice__thumb__link">
+                                                <img src="./img/movie-poster/movie-poster-22.png" alt=""
+                                                    class="boxOffice__img">
+                                            </a>
+                                        </div>
+                                        <div class="boxOffice__item__content">
+                                            <a href="#" class="boxOffice__item__title">4. Человек-невидимка</a>
+                                            <span class="boxOffice__item__last">$6.2 млн</span>
+                                            <span class="boxOffice__item__all">$58.3 млн за 3 недели</span>
+                                        </div>
+                                    </div>
+                                    <div class="boxOffice__item">
+                                        <div class="boxOffice__thumb">
+                                            <a href="#" class="boxOffice__thumb__link">
+                                                <img src="./img/movie-poster/movie-poster-24.png" alt=""
+                                                    class="boxOffice__img">
+                                            </a>
+                                        </div>
+                                        <div class="boxOffice__item__content">
+                                            <a href="#" class="boxOffice__item__title">5. Джентльмены</a>
+                                            <span class="boxOffice__item__last">$1.8 млн</span>
+                                            <span class="boxOffice__item__all">$78.7 млн за 11 недель</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab22" class="boxOffice__tabs__item tab-content">
+                                <div class="boxOffice__box">
+                                    <div class="boxOffice__item">
+                                        <div class="boxOffice__thumb">
+                                            <a href="#" class="boxOffice__thumb__link">
+                                                <img src="./img/movie-poster/movie-poster-23.png" alt=""
+                                                    class="boxOffice__img">
+                                            </a>
+                                        </div>
+                                        <div class="boxOffice__item__content">
+                                            <a href="#" class="boxOffice__item__title">1. Соник в кино</a>
+                                            <span class="boxOffice__item__last">$2.9 млн</span>
+                                            <span class="boxOffice__item__all">$15.1 млн за 4 недели</span>
+                                        </div>
+                                    </div>
+                                    <div class="boxOffice__item">
+                                        <div class="boxOffice__thumb">
+                                            <a href="#" class="boxOffice__thumb__link">
+                                                <img src="./img/movie-poster/movie-poster-24.png" alt=""
+                                                    class="boxOffice__img">
+                                            </a>
+                                        </div>
+                                        <div class="boxOffice__item__content">
+                                            <a href="#" class="boxOffice__item__title">2. Джентльмены</a>
+                                            <span class="boxOffice__item__last">$1.8 млн</span>
+                                            <span class="boxOffice__item__all">$78.7 млн за 11 недель</span>
+                                        </div>
+                                    </div>
+                                    <div class="boxOffice__item">
+                                        <div class="boxOffice__thumb">
+                                            <a href="#" class="boxOffice__thumb__link">
+                                                <img src="./img/movie-poster/movie-poster-20.png" alt=""
+                                                    class="boxOffice__img">
+                                            </a>
+                                        </div>
+                                        <div class="boxOffice__item__content">
+                                            <a href="#" class="boxOffice__item__title">3. Бладшот</a>
+                                            <span class="boxOffice__item__last">$13 млн</span>
+                                            <span class="boxOffice__item__all">$15.1 млн за 4 недели</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="boxOffice__item">
+                                        <div class="boxOffice__thumb">
+                                            <a href="#" class="boxOffice__thumb__link">
+                                                <img src="./img/movie-poster/movie-poster-21.png" alt=""
+                                                    class="boxOffice__img">
+                                            </a>
+                                        </div>
+                                        <div class="boxOffice__item__content">
+                                            <a href="#" class="boxOffice__item__title">4. Вперёд</a>
+                                            <span class="boxOffice__item__last">$6.8 млн</span>
+                                            <span class="boxOffice__item__all">$41.4 млн за 4 недели</span>
+                                        </div>
+                                    </div>
+                                    <div class="boxOffice__item">
+                                        <div class="boxOffice__thumb">
+                                            <a href="#" class="boxOffice__thumb__link">
+                                                <img src="./img/movie-poster/movie-poster-22.png" alt=""
+                                                    class="boxOffice__img">
+                                            </a>
+                                        </div>
+                                        <div class="boxOffice__item__content">
+                                            <a href="#" class="boxOffice__item__title">5. Человек-невидимка</a>
+                                            <span class="boxOffice__item__last">$6.2 млн</span>
+                                            <span class="boxOffice__item__all">$58.3 млн за 3 недели</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
