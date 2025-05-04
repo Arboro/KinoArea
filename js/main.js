@@ -286,3 +286,31 @@ document.querySelectorAll('.latestNews__body').forEach(gallery => {
         scrollContainer.scrollLeft = scrollLeft - walk;
     });
 });
+
+
+// Button Up
+
+window.onscroll = function () { scrollFunction() };
+
+const upbuttons = document.querySelectorAll(".top__btn");
+
+for (const upbutton of upbuttons) {
+    upbutton.addEventListener("click", clickHandler);
+}
+
+function clickHandler(e) {
+    e.preventDefault();
+    const href = this.getAttribute("href");
+
+    document.querySelector(href).scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function scrollFunction() {
+    if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+        document.getElementById('btnUp').className = 'top__btn visible';
+    } else {
+        document.getElementById('btnUp').className = 'top__btn hidden';
+    }
+}

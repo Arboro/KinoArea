@@ -233,6 +233,41 @@ body {
   background: var(--blue-light);
 }
 
+.top__btn {
+  display: inline-flex;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  background: var(--blue-dark);
+  padding: 22px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 100;
+  transition: var(--tr);
+}
+
+.top__btn:hover {
+  background: var(--blue-light);
+}
+
+.top__btn::before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 31px;
+  background-image: url(../img/arrow-top.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.top__btn.hidden {
+  opacity: 0;
+}
+
+.top__btn.visible {
+  opacity: 1;
+}
+
 .main {
   flex-grow: 1;
 }
@@ -1182,14 +1217,9 @@ body {
   position: relative;
 }
 
-.latestNews__thumbnail-card__content {
-}
-
 .latestNews__thumbnail-card {
   position: relative;
   border-radius: 10px;
-
-  /* width: 100%; */
   height: 182px;
   max-height: 182px;
   overflow: hidden;
@@ -1218,9 +1248,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  top: 11px;
+  top: 9px;
   left: 18px;
-  bottom: 25px;
+  bottom: 20px;
   opacity: 1;
 }
 
