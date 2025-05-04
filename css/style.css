@@ -90,6 +90,7 @@
   --poster-accent: rgba(54, 87, 203, 0.65);
   --subscribe-accent: rgba(29, 58, 160, 0.9);
   --boxOffice-accent: rgba(255, 255, 255, 0.41);
+  --people-accent: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 55.56%);
   --scroll-bcg: #1b2133;
   --scroll-bcg-accent: #242c45;
 
@@ -715,9 +716,16 @@ body {
   margin-bottom: 11px;
 
   width: 100%;
-  height: 462px;
-  max-height: 462px;
+  width: 340px;
+  height: 483px;
+  max-height: 483px;
   overflow: hidden;
+}
+
+.popularMovie__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .popularMovie__overlay {
@@ -748,9 +756,6 @@ body {
 
 .popularMovie__overlay__btn:hover {
   text-decoration: underline;
-}
-
-.popularMovie__img {
 }
 
 .popularMovie__score {
@@ -827,13 +832,548 @@ body {
   background-size: contain;
 }
 
+/* popularPeople */
+
+.popularPeople {
+  margin-top: 65px;
+}
+
+.popularPeople__head {
+  display: flex;
+  justify-content: space-between;
+}
+.popularPeople__title {
+  font-weight: 900;
+  font-size: 65px;
+  color: #fff;
+}
+.popularPeople__tabs__buttons {
+  display: flex;
+  align-items: baseline;
+  gap: 35px;
+  margin-top: 33px;
+}
+
+.popularPeople__tab-btn {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--tabs-link);
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+.tab-btn__active {
+  color: var(--light);
+}
+.popularPeople__body {
+  margin-top: 63px;
+}
+
+.popularPeople__tabs__item {
+  display: none;
+}
+
+.popularPeople__tabs__item.active {
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.popularPeople__main {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.popularPeople__main__item {
+}
+
+.popularPeople__main__item__link:hover .popularPeople__rusName {
+  text-decoration: underline;
+}
+
+.popularPeople__thumb {
+  position: relative;
+  border-radius: 10px;
+
+  width: 444px;
+  height: 444px;
+  overflow: hidden;
+}
+
+.popularPeople__img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+  object-fit: cover;
+  object-position: 0 0;
+}
+
+.popularPeople__thumb::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--people-accent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.popularPeople__description {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  right: 16px;
+  bottom: 37px;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.popularPeople__place {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 133%;
+  color: var(--yellow);
+}
+
+.popularPeople__content {
+  margin-left: 20px;
+}
+
+.popularPeople__rusName {
+  font-weight: 700;
+  font-size: 27px;
+  color: var(--light);
+  margin-bottom: 6px;
+}
+
+.popularPeople__engName {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--tabs-link);
+  margin-bottom: 9px;
+}
+
+.popularPeople__age {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 133%;
+  color: var(--yellow);
+}
+
+.popularPeople__other {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  border-radius: 10px;
+  background: var(--scroll-bcg);
+  padding: 29px;
+  gap: 15px;
+}
+
+.popularPeople__other__item__link {
+  display: block;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.popularPeople__other__item__link:not(:last-child)::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: #1e2538;
+  margin: 21px 0 0;
+}
+
+.popularPeople__other__item__link:hover .popularPeople__other__rusName {
+  text-decoration: underline;
+}
+
+.popularPeople__other__description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+.popularPeople__other__place {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--yellow);
+}
+
+.popularPeople__other__rusName {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--light);
+  margin-bottom: 3px;
+}
+
+.popularPeople__other__engName {
+  font-weight: 600;
+  font-size: 15px;
+  color: #3b486b;
+  margin-bottom: 4px;
+}
+
+.popularPeople__other__age {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--yellow);
+}
+
+/* latestNews */
+
+.latestNews {
+  margin-top: 65px;
+  margin-bottom: 82px;
+}
+
+.latestNews__head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.latestNews__title {
+  font-weight: 900;
+  font-size: 65px;
+  color: var(--light);
+}
+
+.latestNews__link {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--light);
+  margin-top: 35px;
+}
+
+.latestNews__link::after {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 15px;
+  background-image: url(../img/arrow.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.latestNews__link:hover {
+  text-decoration: underline;
+}
+
+.latestNews__body {
+  display: flex;
+  gap: 16px;
+  margin-top: 79px;
+}
+
+.latestNews__selected-container {
+}
+
+.latestNews__selected__thumb {
+  position: relative;
+  width: 1159px;
+  max-width: 1159px;
+  height: 772px;
+  max-height: 772px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.latestNews__selected-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: brightness(80%);
+}
+
+.latestNews__selected__content {
+  position: absolute;
+  top: 37px;
+  left: 32px;
+  right: 23px;
+  bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.latestNews__selected__content__head {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 191%;
+  color: #fff;
+}
+
+.latestNews__selected__views {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.latestNews__selected__views::before {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 22px;
+  background-image: url(../img/eye.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.latestNews__selected__comments {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.latestNews__selected__comments::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/comment.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.latestNews__selected__content__body {
+  display: flex;
+  flex-direction: column;
+  max-width: 906px;
+}
+
+.latestNews__selected-title {
+  font-weight: 900;
+  font-size: 45px;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.latestNews__selected-description {
+  font-weight: 500;
+  font-size: 20px;
+  color: #fff;
+}
+
+.latestNews__scroll-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+
+.latestNews__thumbnail-card__content {
+}
+
+.latestNews__thumbnail-card {
+  position: relative;
+  border-radius: 10px;
+
+  /* width: 100%; */
+  height: 182px;
+  max-height: 182px;
+  overflow: hidden;
+}
+
+.latestNews__thumbnail-image-wrapper {
+  background-color: rgba(54, 87, 203, 0.65);
+  padding: 5px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.latestNews__thumbnail-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: brightness(75%);
+}
+
+.latestNews__thumbnail__content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 11px;
+  left: 18px;
+  bottom: 25px;
+  opacity: 1;
+}
+
+.latestNews__thumbnail-card:hover .latestNews__thumbnail__content {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.latestNews__thumbnail-card.selected .latestNews__thumbnail__content {
+  opacity: 0;
+}
+
+.latestNews__date {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 191%;
+  color: #fff;
+}
+
+.latestNews__thumbnail-title {
+  max-width: 200px;
+  font-weight: 900;
+  font-size: 18px;
+  color: #fff;
+}
+
+.latestNews__overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--poster-accent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.latestNews__thumbnail-card.selected .latestNews__overlay {
+  opacity: 1;
+}
+
+.latestNews__thumbnail-card:hover .latestNews__overlay {
+  opacity: 1;
+}
+
+.latestNews__overlay__btn {
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  padding: 20px 26px;
+  border-radius: 10px;
+  border: 2px solid #fff;
+}
+
+.latestNews__overlay__btn:hover {
+  text-decoration: underline;
+}
+
+/* expected */
+
+.expected {
+  padding-top: 49px;
+  background-color: var(--dark);
+}
+
+.expected__wrapper {
+}
+
+.expected__head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.expected__title {
+  display: flex;
+  align-items: end;
+  font-weight: 900;
+  font-size: 65px;
+  color: var(--light);
+}
+
+.expected__nav__buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.expected__thumb {
+  position: relative;
+  border-radius: 10px;
+  margin-bottom: 14px;
+
+  width: 100%;
+  width: 335px;
+  height: 464px;
+  max-height: 464px;
+  overflow: hidden;
+}
+
+.expected__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.expected__overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--poster-accent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expected__thumb:hover .expected__overlay {
+  opacity: 1;
+}
+
+.expected__overlay__btn {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 167%;
+  color: var(--blue-dark);
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(55, 94, 232, 0.4);
+  background: var(--light);
+}
+
+.expected__overlay__btn:hover {
+  text-decoration: underline;
+}
+
+.expected__item__title {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--light);
+}
+
+.expected__item__premiere {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 191%;
+  color: var(--yellow);
+}
+
 /* boxOffice */
 
 .boxOffice {
-  margin-top: 105px;
-}
-
-.boxOffice__wrapper {
+  padding-top: 105px;
+  background-color: var(--dark);
 }
 
 .boxOffice__head {
@@ -972,7 +1512,8 @@ body {
 /* subscribe */
 
 .subscribe {
-  margin-top: 95px;
+  padding-top: 95px;
+  background-color: var(--dark);
 }
 
 .subscribe__wrapper {
@@ -1138,8 +1679,9 @@ body {
 /* footer */
 
 .footer {
-  margin-top: 61px;
+  padding-top: 61px;
   padding-bottom: 50px;
+  background-color: var(--dark);
 }
 
 .footer__wrapper {
