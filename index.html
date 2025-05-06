@@ -78,7 +78,133 @@
                         <button class="search__btn"></button>
                     </div>
 
-                    <button class="login">Войти</button>
+                    <button class="login" onclick="openModal('loginModal')">Войти</button>
+
+                    <!-- LOGIN MODAL -->
+                    <div id="loginModal" class="modal">
+                        <div class="modal__content">
+                            <div class="modal__head">
+                                <span class="modal__title">Войти</span>
+                                <span onclick="closeModal('loginModal')" class="modal__close"></span>
+                            </div>
+                            <form class="modal__body" action="/action_page.php" method="post">
+                                <input class="modal__input" type="text" placeholder="Логин" name="uname" required>
+                                <input class="modal__input" type="password" placeholder="Ваш пароль" name="psw"
+                                    required>
+                                <button type="submit" class="modal__confirm__btn">Войти</button>
+
+                                <button type="button" class="modal__another"
+                                    onclick="switchModal('loginModal', 'registerModal')">Зарегистрироваться</button>
+
+                                <a class="modal__toRecovery"
+                                    onclick="switchModal('loginModal', 'recoveryModal')">Восстановить
+                                    пароль</a>
+                            </form>
+                            <div class="modal__social">
+                                <a href="#" class="modal__social__link">
+                                    <img src="./img/social-modal/vk.svg" alt="" class="modal__social__img">
+                                </a>
+                                <a href="#" class="modal__social__link">
+                                    <img src="./img/social-modal/facebook.svg" alt="" class="modal__social__img">
+                                </a>
+                                <a href="#" class="modal__social__link">
+                                    <img src="./img/social-modal/google.svg" alt="" class="modal__social__img">
+                                </a>
+                                <a href="#" class="modal__social__link">
+                                    <img src="./img/social-modal/x.svg" alt="" class="modal__social__img">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- REGISTER MODAL -->
+                    <div id="registerModal" class="modal">
+                        <div class="modal__content">
+                            <div class="modal__head">
+                                <span class="modal__title">Зарегистрироваться</span>
+                                <span onclick="closeModal('registerModal')" class="modal__close"></span>
+                            </div>
+                            <form class="modal__body" action="/register_user.php" method="post">
+                                <input class="modal__input" type="text" placeholder="Имя" name="username" required>
+                                <input class="modal__input" type="text" placeholder="Фамилия" name="usersurname"
+                                    required>
+                                <input class="modal__input" type="text" placeholder="Придумайте логин" name="userlogin"
+                                    required>
+                                <input class="modal__input" type="password" placeholder="Придумайте пароль" name="psw"
+                                    required>
+                                <input class="modal__input" type="password" placeholder="Повторите пароль"
+                                    name="confirmpsw" required>
+                                <input class="modal__input" type="email" placeholder="Номер телефона или e-mail"
+                                    name="email" required>
+                                <div class="modal__privacy">
+                                    <label class="custom__checkbox1">
+                                        <input type="checkbox" class="modal__checkbox" name="subscribe" required>
+                                        <span class="modal__checkmark"></span>
+                                        Соглашаюсь на условия <a href="#" class="modal__privacy__link">политики
+                                            конфиденциальности</a>
+                                    </label>
+
+
+                                    <label class="custom__checkbox1">
+                                        <input type="checkbox" class="modal__checkbox" name="subscribe" required>
+                                        <span class="modal__checkmark"></span>
+                                        Соглашаюсь на обработку персональных данных
+                                    </label>
+                                </div>
+
+
+                                <button type="submit" class="modal__confirm__btn">Зарегистрироваться</button>
+                                <button type="button" class="modal__another"
+                                    onclick="switchModal('registerModal', 'loginModal')">Назад</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- RECOVERY MODAL -->
+                    <div id="recoveryModal" class="modal">
+                        <div class="modal__content">
+                            <div class="modal__head">
+                                <span class="modal__title">Восстановить пароль</span>
+                                <span onclick="closeModal('recoveryModal')" class="modal__close"></span>
+                            </div>
+                            <form class="modal__body" action="/recover_password.php" method="post">
+                                <input class="modal__input" type="email" placeholder="Почта или номер телефона"
+                                    name="email" required>
+                                <div class="modal__code">
+                                    <button type="submit" class="modal__code__btn" disabled>Отправить</button>
+                                    <input class="modal__input modal__code__input" type="text"
+                                        placeholder="Полученный код" name="usercode" required>
+                                </div>
+
+                                <button type="button" class="modal__confirm__btn"
+                                    onclick="switchModal('recoveryModal', 'recoverylastModal')">Далее</button>
+                                <button type="button" class="modal__another"
+                                    onclick="switchModal('recoveryModal', 'loginModal')">Назад</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- RECOVERY LAST MODAL -->
+                    <div id="recoverylastModal" class="modal">
+                        <div class="modal__content">
+                            <div class="modal__head">
+                                <span class="modal__title">Восстановить пароль</span>
+                                <span onclick="closeModal('recoverylastModal')" class="modal__close"></span>
+                            </div>
+                            <form class="modal__body" action="/recover_password.php" method="post">
+                                <input class="modal__input" type="password" placeholder="Придумайте пароль" name="psw"
+                                    required>
+                                <input class="modal__input" type="password" placeholder="Повторите пароль"
+                                    name="confirmpsw" required>
+                                <button type="submit" class="modal__confirm__btn">Готово!</button>
+                                <button type="button" class="modal__another"
+                                    onclick="switchModal('recoverylastModal', 'recoveryModal')">Назад</button>
+                            </form>
+                        </div>
+                    </div>
+
+
                 </nav>
             </div>
 

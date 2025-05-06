@@ -127,6 +127,10 @@ body {
   box-sizing: border-box;
 }
 
+.main {
+  flex-grow: 1;
+}
+
 /* header */
 
 .header {
@@ -233,6 +237,271 @@ body {
   background: var(--blue-light);
 }
 
+/* Modal wrapper */
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 500;
+}
+
+/* Modal content box */
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  padding: 41px 0;
+  background-color: #191e2e;
+  margin: 2% auto 0 auto;
+  max-width: 815px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.4s ease-out;
+}
+
+/* Modal show state */
+.modal.show .modal__content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Close button */
+.modal__close {
+  position: absolute;
+  top: 21px;
+  right: 24px;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal__close::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url(../img/modal-close.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.modal__head {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.modal__title {
+  font-weight: 800;
+  font-size: 40px;
+  color: #fff;
+}
+
+.modal__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.modal__input {
+  width: 100%;
+  max-width: 422px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 167%;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 20px 26px;
+  border-radius: 10px;
+  border: none;
+  background: #1e2538;
+  box-sizing: border-box;
+}
+
+.modal__input:focus {
+  outline: none;
+}
+
+.modal__confirm__btn {
+  width: 100%;
+  max-width: 422px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 167%;
+  color: #151a26;
+  padding: 14px 0;
+  border: none;
+  border-radius: 10px;
+  background-color: #f2f60f;
+  cursor: pointer;
+  transition: var(--tr);
+}
+
+.modal__confirm__btn:hover {
+  background-color: var(--yellow-light);
+}
+
+.modal__another {
+  width: 100%;
+  max-width: 422px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 167%;
+  color: var(--light);
+  padding: 14px 0;
+  border: none;
+  border-radius: 10px;
+  background-color: #1e2538;
+  cursor: pointer;
+  transition: var(--tr);
+}
+
+.modal__another:hover {
+  background-color: var(--blue-light);
+}
+
+.modal__social {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.modal__social__link {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #1e2538;
+  transition: var(--tr);
+}
+
+.modal__social__link:hover {
+  background-color: #3657cb;
+}
+
+.modal__social__img {
+  display: block;
+  width: 21px;
+  height: 21px;
+}
+
+.modal__toRecovery {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 167%;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-align: center;
+  color: #3657cb;
+  cursor: pointer;
+}
+
+.modal__toRecovery:hover {
+  color: var(--blue-light);
+}
+
+.modal__privacy {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.custom__checkbox1 {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 140%;
+  color: #fff;
+  gap: 11px;
+}
+
+.modal__checkbox {
+  display: none;
+}
+
+.custom__checkbox1 .modal__checkmark {
+  width: 17px;
+  height: 17px;
+  background-color: var(--light);
+  border-radius: 2px;
+  position: relative;
+  transition: background-image 0.3s ease;
+}
+
+.modal__checkbox:checked + .modal__checkmark {
+  background-color: var(--yellow);
+}
+
+.modal__checkbox .modal__checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.modal__checkbox:checked + .modal__checkmark {
+  background-image: url(../img/checkbox.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: var(--yellow);
+}
+
+.subscribe__privacy__title {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--light);
+}
+
+.modal__privacy__link {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 140%;
+  text-decoration: underline;
+  color: var(--yellow);
+}
+
+.modal__privacy__link:hover {
+  color: var(--yellow-light);
+}
+
+.modal__code {
+  width: 100%;
+  max-width: 422px;
+  display: flex;
+  justify-content: space-between;
+  gap: 13px;
+}
+
+.modal__code__btn {
+  width: 50%;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 167%;
+  text-align: center;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  background-color: #3657cb;
+  cursor: pointer;
+  transition: var(--tr);
+}
+
+.modal__code__btn:hover {
+  background-color: var(--blue-light);
+}
+
+.modal__code__input {
+  width: 50%;
+}
+
 .top__btn {
   display: inline-flex;
   position: fixed;
@@ -266,10 +535,6 @@ body {
 
 .top__btn.visible {
   opacity: 1;
-}
-
-.main {
-  flex-grow: 1;
 }
 
 /* nowCinema */
